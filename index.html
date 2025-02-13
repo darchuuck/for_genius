@@ -3,16 +3,43 @@
 
 <head>
   <title>Main page</title>
+  <style>
+    /* add some style for button */
+    button {
+      background-color: rgb(168, 213, 228);
+      color: blue;
+      padding: 4px;
+      border: none;
+      cursor: pointer;
+      border-radius: 2px;
+      margin-right: 10px;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>I'm little websitequu</h1>
-  <p>Choose something:</p>
-  <br>
-  <button>u r amazing and remarkable</button>
-  <button>u r ugly and awful</button>
-  <br>
-  <a href="another_file.html">Go to another my page and know the right answer</a>
+  <p>Adults plain cotton T-shirt</p>
+  <p>Price: $7.99</p>
+  <button onclick="alert('Added')">Add to Cart</button>
+  <button onclick="alert('Loading...');
+    alert('Purchased')">
+    Buy now
+  </button>
+  <button onclick="
+      alert(`Total cost : $${totalCost}`);">
+    Total cost
+  </button>
+
+  <script>
+    const cost = 5 + 2 * 3 + 9;
+    console.log(`Cost of food: $${cost}`);
+
+    const tax = cost * 0.1;
+    console.log(`Tax (10%): $${tax}`);
+
+    const totalCost = cost + tax;
+    console.log(`Total cost: $${totalCost}`);
+  </script>
 </body>
 
 

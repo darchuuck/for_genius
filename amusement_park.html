@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Amusement park</title>
+</head>
+
+<body>
+
+    <!-- cart -->
+    <button onclick="
+          console.log(`Cart quantity: ${cartQuantity}`);
+        ">Show Quantity</button>
+
+    <button onclick="updateCartQuantity(1)
+        ">Add to Cart</button>
+
+    <button onclick="updateCartQuantity(2)
+        ">+2</button>
+
+    <button onclick="updateCartQuantity(3)
+        ">+3</button>
+
+    <button onclick="updateCartQuantity(4)
+        ">+4</button>
+
+    <button onclick="updateCartQuantity(5)
+        ">+5</button>
+
+
+    <!-- vvv This code was changed. vvv -->
+    <button onclick="updateCartQuantity(-1)
+          ">Remove from cart</button>
+
+    <button onclick="updateCartQuantity(-2)
+        ">-2</button>
+
+    <button onclick="updateCartQuantity(-3)
+        ">-3</button>
+
+    <!-- ^^^ This code was changed. ^^^ -->
+
+    <button onclick="
+          cartQuantity = 0;
+          console.log('Cart was reset.');
+          console.log(`Cart quantity: ${cartQuantity}`);
+        ">Reset Cart</button>
+
+    <script>
+
+        //cart quantity
+        let cartQuantity = 0;
+
+        function updateCartQuantity(number) {
+            if (cartQuantity + number > 10) {
+                console.log('Cart is full');
+                return;
+            }
+
+            if ((cartQuantity + number) < 0) {
+                console.log('Not enough items in the cart');
+                return;
+            }
+
+            cartQuantity = cartQuantity + number;
+            console.log(`Cart quantity: ${cartQuantity}`);
+
+
+        }
+
+
+        //convert lendth
+        // function convertLendth(lendth, from, to) {
+        //     if (!['miles', 'km', 'feet'].includes(from) || !['miles', 'km', 'feet'].includes(to)) {
+        //         return `Invalid unit: ${from} to ${to}`;
+        //     }
+        // if (from !== 'km' && from !== 'miles' && from !== 'ft') { // annother variant invalid units
+        //         return `Invalid unit: ${from}`;
+        //     } else if (to !== 'km' && to !== 'miles' && to !== 'ft') {
+        //         return `Invalid unit: ${to}`;
+        //     }
+        //     if (from === 'miles' && to === 'km') {
+        //         return `${lendth * 1.6} ${to}`;
+        //     } else if (from === 'km' && to === 'miles') {
+        //         return `${lendth / 1.6} ${to}`;
+        //     } else if (from === 'km' && to === 'feet') {
+        //         return `${lendth * 3281} ${to}`;
+        //     } else if (from === 'miles' && to === 'feet') {
+        //         return `${lendth * 5280} ${to}`;
+        //     } else if (from === 'feet' && to === 'km') {
+        //         return `${lendth / 3281} ${to}`;
+        //     }
+        //     else if (from === 'feet' && to === 'miles') {
+        //         return `${lendth / 5280} ${to}`;
+        //     } else if(from===to) {
+        //         return `${lendth} ${to}`;
+        //     }
+        // };
+
+        // console.log(convertLendth(50, 'miles', 'km'));
+        // console.log(convertLendth(32, 'km', 'miles'));
+        // console.log(convertLendth(50, 'km', 'km'));
+        // console.log(convertLendth(32, 'miles', 'miles'));
+
+        // console.log(convertLendth(5, 'miles', 'km'));
+        // console.log(convertLendth(5, 'miles', 'feet'));
+        // console.log(convertLendth(5, 'km', 'feet'));
+
+        // console.log(convertLendth(5, 'kkks', 'miles'))
+
+
+
+        //convert temperature
+        // function returnToTempature(degrees, unit) {
+        //     if (unit === 'C') {
+        //         return `${convertToFarenheit(degrees)}F`;
+
+        //     }
+        //     else if (unit === 'F') {
+        //         return `${convertToCelsius(degrees)}C`;
+        //     }
+        // }
+
+        // function convertToFarenheit(celsius) {
+        //     const inFar = (celsius * 9 / 5) + 32;
+        //     return inFar;
+        // }
+
+        // function convertToCelsius(fahrenheit) {
+        //     const inCel = (fahrenheit - 32) * 5 / 9;
+        //     return inCel;
+        // }
+
+        // console.log(returnToTempature(25, 'C'));
+        // console.log(returnToTempature(86, 'F'));
+
+
+
+        //random
+        // const randNum = Math.random();
+        // let result = '';
+        // const guess = "heads";
+        // randNum < 0.5 ? result="heads" : result="tails" ;
+        // // console.log(result); // guess !==result ? console.log('You lose!') : console.log('You win!'); // something about amusement park // const age=50; // const isHoliday=true;
+        // // if((age <= 6 || age >= 60) && isHoliday) {
+        // alert("Discount");
+        // } else {
+        // console.log("no discount")
+        // }
+    </script>
+</body>
+
+</html>
