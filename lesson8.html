@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lesson 8</title>
+
+</head>
+
+<body>
+
+    <button onclick="playGame('heads')">heads</button>
+    <button onclick="playGame('tails')">tails</button>
+
+    <script>
+
+        const score = JSON.parse(localStorage.getItem('score')) || {
+            wins: 0,
+            lose: 0
+        }
+
+        function playGame(guess) {
+            const randNum = Math.random();
+            let result = '';
+            randNum < 0.5 ? result = "heads" : result = "tails";
+
+            if (guess !== result) {
+                score.lose++;
+            }
+            else {
+                score.wins++;
+            }
+
+            localStorage.setItem('score', JSON.stringify(score));
+
+            alert(`computer's move was ${result} and your was ${guess}. ${guess === result ? 'You win!' : 'You lose!'}. \nscore : ${score.wins} wins, ${score.lose} lose`)
+        }
+
+
+
+
+
+        // function isSameProduct(product1, product2) {
+        //     if (product1.name === product2.name && product1.price === product2.price) {
+        //         return "same";
+        //     } else {
+        //         return "different"
+        //     }
+        // }
+
+        // const product1 = {
+        //     name: "cabbage",
+        //     price: 50
+        // }
+
+        // const product2 = {
+        //     name: "cabbage",
+        //     price: 50
+        // }
+
+        // let result = isSameProduct(product1, product2);
+        // console.log(result.repeat(3));
+
+    </script>
+</body>
+
+
+</html>

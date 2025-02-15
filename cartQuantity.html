@@ -9,7 +9,7 @@
 
     <!-- cart -->
     <button onclick="
-          console.log(`Cart quantity: ${cartQuantity}`);
+           displayCartQuantity()
         ">Show Quantity</button>
 
     <button onclick="updateCartQuantity(1)
@@ -43,29 +43,45 @@
     <button onclick="
           cartQuantity = 0;
           console.log('Cart was reset.');
-          console.log(`Cart quantity: ${cartQuantity}`);
+
+          displayCartQuantity();
+
         ">Reset Cart</button>
 
+    <p class="show-quantity"></p>
     <script>
 
         //cart quantity
-        let cartQuantity = 0;
+        let cartQuantity = Number(localStorage.getItem('cart')) || 0;
+
+        displayCartQuantity();
 
         function updateCartQuantity(number) {
             if (cartQuantity + number > 10) {
-                console.log('Cart is full');
+                alert('Cart is full');
                 return;
             }
 
             if ((cartQuantity + number) < 0) {
-                console.log('Not enough items in the cart');
+                alert('Not enough items in the cart');
                 return;
             }
 
             cartQuantity = cartQuantity + number;
-            console.log(`Cart quantity: ${cartQuantity}`);
+            displayCartQuantity();
+            saveCart();
 
+        }
 
+        function displayCartQuantity() {
+            let showResult = document.querySelector('.show-quantity');
+
+            showResult.innerHTML = `Cart quantity: ${cartQuantity}`;
+
+        }
+
+        function saveCart() {
+            localStorage.setItem('cart', cartQuantity);
         }
 
 

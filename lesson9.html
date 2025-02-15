@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lesson 8</title>
+
+</head>
+
+<body>
+
+    <button class="a9" onclick="console.log(document.querySelector('.a9'));">9a</button>
+    <button class="b9" onclick="changeButton()">9b</button>
+
+
+    <button class="js-chose-btn" onclick="
+        document.querySelector('.js-chose-p').innerHTML='You chose: heads';
+    ">heads</button>
+    <button class="js-chose-btn" onclick="
+        document.querySelector('.js-chose-p').innerHTML='You chose: tails';
+    ">tails</button>
+    <p class="js-chose-p"></p>
+
+
+    <input type="text" placeholder="type your name" class="submit-input" onkeydown="handleGetName(event)">
+    <button class="submit-btn" onclick="submit()">Submit</button>
+    <p class="submit-p"></p>
+
+
+    <input type="text" class="typing-input" placeholder="type here" onkeyup="typing(event)">
+    <p class="typing-result"></p>
+
+    <script>
+        function changeButton() {
+            document.querySelector('.b9').innerText = '9b done!';
+
+        }
+
+        function handleGetName(event) {
+            if (event.key === 'Enter') {
+                submit();
+            }
+        }
+
+        function submit() {
+            const name = document.querySelector('.submit-input').value;
+
+            document.querySelector('.submit-p').innerHTML = `Your name is ${name}`;
+        }
+
+        function typing(event) {
+            document.querySelector('.typing-result').innerHTML = document.querySelector('.typing-input').value;
+        }
+
+
+    </script>
+</body>
+
+
+</html>
