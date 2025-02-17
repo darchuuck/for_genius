@@ -3,6 +3,7 @@
 
 <head>
         <title>Calculator</title>
+        <link rel="stylesheet" href="styles/calculator.css">
 </head>
 
 <body>
@@ -15,7 +16,7 @@
                 </button>
                 <button onclick="updateCalculatr(3)">3
                 </button>
-                <button onclick="updateCalculatr(' + ')">+
+                <button class="calculate-btn" onclick="updateCalculatr(' + ')">+
                 </button>
         </p>
 
@@ -26,7 +27,7 @@
                 </button>
                 <button onclick="updateCalculatr(6)">6
                 </button>
-                <button onclick="updateCalculatr(' - ')">-
+                <button class="calculate-btn" onclick="updateCalculatr(' - ')">-
                 </button>
         </p>
 
@@ -37,7 +38,7 @@
                 </button>
                 <button onclick="updateCalculatr(9)">9
                 </button>
-                <button onclick="updateCalculatr(' * ')">*
+                <button class="calculate-btn" onclick="updateCalculatr(' * ')">*
                 </button>
         </p>
 
@@ -51,13 +52,13 @@
                         showResult();
                         saveCalculator();">=
                 </button>
-                <button onclick="updateCalculatr(' / ')">/
+                <button class="calculate-btn" onclick="updateCalculatr(' / ')">/
                 </button>
 
         </p>
 
         <p>
-                <button onclick="
+                <button class="equal-btn" onclick="
                         calculation = '' ;
                         console.log('Cleared');
                         showResult();
@@ -66,24 +67,7 @@
         </p>
 
 
-        <script>
-                let calculation = localStorage.getItem('calculation') || '';
-
-                showResult();
-                function updateCalculatr(value) {
-                        calculation += `${value}`;
-                        showResult();
-                        saveCalculator();
-                }
-
-                function saveCalculator() {
-                        localStorage.setItem('calculation', calculation)
-                }
-
-                function showResult() {
-                        const result = document.querySelector('.result');
-                        result.innerHTML = calculation;
-                }
+        <script src="js/calculator.js">
 
         </script>
 </body>

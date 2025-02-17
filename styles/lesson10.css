@@ -1,0 +1,51 @@
+.amazon-btn{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: black;
+    background-color: rgb(255, 216, 20);
+    padding: 4px 50px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.uber{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.uber.light{
+    color: black;
+    background-color: rgb(230, 230, 230);
+}
+
+.uber.dark{
+    color: white;
+    background-color: black;
+}
+
+
+/* gaming btn */
+.gaming-btn{
+    color: black;
+    background-color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.gaming-btn.is-toggled{
+    color: white;
+    background-color: black;
+}
