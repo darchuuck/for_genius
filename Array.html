@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Arrays</title>
+</head>
+
+<body>
+
+    <script>
+        // const nums = [-10, 0, 499, 10, 12, -20];
+        // const arr1 = [1, 2, 3];
+        // const arr2 = [4, 5, 6]
+        // const words = ['hello', 'gpood', 'sweaty'];
+
+        // // console.log(getLastValue(nums));
+        // // console.log(getLastValue(words));
+
+        // // console.log(arraySwap(words));
+        // // console.log(addOne(nums, 2));
+        // // console.log(addArrays(arr1, arr2));
+
+        // // console.log(countPositive(nums));
+
+        // // console.log(minMax(nums));
+
+        // function getLastValue(array) {
+
+        //     const lastIndex = array.length - 1;
+        //     return array[lastIndex];
+        // }
+
+        // function arraySwap(array) {
+        //     // const newArray = array.reverse();
+        //     const lastIndex = array.length - 1;
+        //     const lastValue = array[lastIndex];
+        //     const firstValue = array[0];
+
+        //     array[0] = lastValue;
+        //     array[lastIndex] = firstValue;
+
+        //     return array;
+        // }
+
+        // function addOne(array, num) {
+        //     const newArray = [];
+        //     for (let i = 0; i < array.length; i++) {
+        //         newArray.push(array[i] + num);
+
+        //     }
+        //     return newArray;
+        // }
+
+        // function addArrays(array1, array2) {
+        //     const newArray = [];
+        //     for (let i = 0; i < array1.length; i++) {
+
+        //         newArray.push(array1[i] + array2[i]);
+        //     }
+
+        //     return newArray;
+
+        // }
+
+        // function countPositive(nums) {
+        //     let posNum = 0;
+        //     for (let i = 0; i < nums.length; i++) {
+        //         if (nums[i] > 0) {
+        //             posNum++;
+        //         }
+        //     }
+        //     return posNum;
+        // }
+
+
+        // function minMax(nums) {
+        //     if (nums.length === 0) {
+        //         return { min: null, max: null };
+        //     }
+
+        //     let min = nums[0];
+        //     let max = nums[0];
+
+        //     for (let i = 1; i < nums.length; i++) {
+        //         if (nums[i] < min) {
+        //             min = nums[i];
+        //         }
+        //         if (nums[i] > max) {
+        //             max = nums[i];
+        //         }
+        //     }
+
+        //     return { min, max };
+        // }
+
+        // console.log(minMax([]));
+        // console.log(minMax([3]));
+
+        // function countWords(words) {
+        //     const result = {};
+        //     for (let i = 0; i < words.length; i++) {
+        //         if (!result[words[i]]) {
+        //             result[words[i]] = 1;
+        //         } else {
+        //             result[words[i]]++;
+        //         }
+        //     }
+
+        //     return result;
+        // }
+
+        // console.log(countWords(['apple', 'grape', 'apple', 'apple']));
+
+        // function findIndex(array, word) {
+        //     let index = -1;
+
+        //     for (let i = 0; i < array.length; i++) {
+        //         if (array[i] === word) {
+        //             index = i;
+
+        //         }
+        //     }
+        //     return index;
+        // }
+
+        // console.log(findIndex(['hello', 'search', 'world', 'good', 'search', 'search'], 'search'));
+
+
+        // function removeEgg(foods) {
+        //     const result = [];
+        //     let eggsRemoved = 0;
+
+        //     const foodsCopy = foods.slice();
+        //     const reversedFoods = foodsCopy.reverse();
+
+        //     for (let i = 0; i < reversedFoods.length; i++) {
+
+        //         if (reversedFoods[i] === 'egg' && eggsRemoved < 2) {
+        //             eggsRemoved++;
+        //             continue;
+        //         } else {
+        //             result.push(reversedFoods[i]);
+        //         }
+
+        //     }
+
+        //     return result.reverse();
+        // }
+
+        // const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+        // console.log(removeEgg(foods));
+        // console.log(foods);
+
+        // for (let i = 1; i < 20; i++) {
+        //     if (i % 3 === 0 && i % 5 === 0) {
+        //         console.log('FizzBuzz');
+        //         continue;
+        //     }
+
+        //     if (i % 3 === 0) {
+        //         console.log('Fizz');
+        //         continue;
+        //     }
+
+        //     if (i % 5 === 0) {
+        //         console.log('Buzz');
+        //         continue;
+        //     }
+
+
+        function unique(array) {
+            const uniqueArray = [];
+            for (let i = 0; i < array.length; i++) {
+                // if (!uniqueArray.includes(array[i])) {
+                //     uniqueArray.push(array[i]);
+                // }
+                if (findIndex(uniqueArray, array[i]) === -1) {
+                    uniqueArray.push(array[i]);
+                }
+            }
+            return uniqueArray;
+        }
+
+        function findIndex(array, word) {
+            let index = -1;
+
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] === word) {
+                    index = i;
+                    break
+                }
+            }
+            return index;
+        }
+
+        console.log(unique(['hello', 'search', 'world', 'good', 'search', 'search']));
+    </script>
+</body>
+
+</html>
