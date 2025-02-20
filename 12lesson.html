@@ -7,23 +7,16 @@
 
 <body>
 
-    <button class="finished-but" onclick="updateButton()">start</button>
+    <button class="finished-but">start</button>
 
     <div>
-        <button class="added-btn" onclick="addToCart()">Add to cart</button>
+        <button class="added-btn">Add to cart</button>
         <p class="js-added"></p>
     </div>
 
     <div>
-        <button class="add" onclick="copy++; displayNotification()">add</button>
-        <button class="remove" onclick="
-            if(copy > 0){
-                copy--;
-                    if(copy === 0){
-                    stopNotification();
-                }
-            } 
-        ">remove</button>
+        <button class="add">add</button>
+        <button class="remove">remove</button>
     </div>
     <script>
         // const add = function () {
@@ -38,29 +31,30 @@
 
         // runTwice(function () { console.log('12b') })
 
-        // function updateButton() {
-        //     const finishBtn = document.querySelector('.finished-but');
 
-        //     finishBtn.innerText = 'loading';
-        //     setTimeout(function () {
-        //         finishBtn.innerText = 'Finished';
-        //     }, 1000)
-        // }
-
-        // let timeoutId;
-        // function addToCart() {
-
-        //     const addPar = document.querySelector('.js-added');
-        //     addPar.innerHTML = 'Added!';
-
-        //     clearTimeout(timeoutId)
+        const finishBtn = document.querySelector('.finished-but');
+        finishBtn.addEventListener('click', () => {
+            finishBtn.innerText = 'loading';
+            setTimeout(() => {
+                finishBtn.innerText = 'Finished';
+            }, 1000)
+        })
 
 
-        //     timeoutId = setTimeout(function () {
-        //         addPar.innerHTML = '';
-        //     }, 2000)
 
-        // }
+        let timeoutId;
+        const addPar = document.querySelector('.js-added');
+        const addBtn = document.querySelector('.added-btn');
+        addBtn.addEventListener('click', () => {
+            addPar.innerHTML = 'Added!';
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                addPar.innerHTML = '';
+            }, 2000)
+
+        })
+
+
 
 
         let copy = 2;
@@ -77,7 +71,7 @@
 
             isDisplayingNotification = true;
 
-            intervalId = setInterval(function () {
+            intervalId = setInterval(() => {
                 if (document.title === "app") {
                     document.title = `(${copy}) New messages`;
                 } else {
@@ -94,7 +88,63 @@
             document.title = 'app'
         }
 
+        const addedBtn = document.querySelector('.add');
+        addedBtn.addEventListener('click', () => {
+            copy++;
+            displayNotification()
+        })
 
+        const removedBtn = document.querySelector('.remove');
+        removedBtn.addEventListener('click', () => {
+            if (copy > 0) {
+                copy--;
+                if (copy === 0) {
+                    stopNotification();
+                }
+            }
+        })
+
+
+
+        // part 2
+
+        // const multiply = (num1, num2) => console.log(num1 * num2);
+        // multiply(10, 2);
+        // multiply(9, -1)
+
+
+        // function countPositive(array) {
+        //     let count = 0;
+        //     array.forEach(element => {
+        //         if (element > 0) {
+        //             count++;
+        //         }
+        //     });
+        //     return console.log(count);
+        // }
+        // countPositive([10, 2, 9, 0, -3])
+
+
+        // function addNum(array, num) {
+        //     return array.map(value => value * num)
+        // }
+        // console.log(addNum([10, 2, 9, 0, -3], 2));
+
+
+        // function removeEggs(foods) {
+        //     let removeEgg = 0;
+        //     return foods.filter(value => {
+        //         if (value === 'egg' && removeEgg < 2) {
+        //             removeEgg++;
+        //             return false;
+        //         } else {
+        //             return true;
+        //         }
+        //     }
+
+        //     )
+        // }
+        // console.log(removeEggs(['egg', 'apple', 'egg', 'egg', 'ham']));
     </script>
 </body>
 
